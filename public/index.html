@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Node.js Client</title>
+</head>
+<body>
+  <h1>Node.js Frontend + Backend!</h1>
+  <button onclick="fetchData()">Get Backend Data</button>
+  <pre id="response"></pre>
+
+  <script>
+    async function fetchData() {
+      const res = await fetch('/api/data');
+      const data = await res.json();
+      document.getElementById('response').innerText = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
